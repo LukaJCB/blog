@@ -7,7 +7,7 @@ categories: scala
 
 There's been a lot of talks recently about the "holy grail of web development" of sharing code between the Server and the Client.
 I think this is a great idea as writing the same code twice can be expensive as the complexity of your project grows.
-I've never been a huge fan of Javascript, but recently a lot of transpilers and extensions to Javascript have emerged, to overcome some of the common pitfalls of Javascript. I've been doing a lot of TypeScript with Node and Express recently and have come to appreciate the working with MEAN, 
+I've never been a huge fan of Javascript, but recently a lot of transpilers and extensions to Javascript have emerged, to overcome some of the common pitfalls of Javascript. I've been doing a lot of TypeScript with Angular and Express.js recently and have come to appreciate the working with MEAN, 
 I realized, that since I'm already transpiling to Javascript and I'd heard that [Scala.js is no longer experimental][scala.js not exp], that transpiling from Scala might be a good idea.
 With [Web Assembly becoming a thing][wasm] transpiling from different languages might just become more and more popular, so I decided to write up a short proof of concept using [Scalatra][scalatra], jQuery and [µPickle][uPickle].
 
@@ -118,6 +118,45 @@ Anyway here's the code that will check the order before sending a POST-Request t
 
 {% highlight scala %}
 
+object Main extends JSApp {
+	
+  var order = Order(List())
+  var currentPizza = Pizza(List())
+  
+  @JSExport
+  def submitTopping(): Unit = { 
+	  val unvalidatedTopping = jQuery("#topping").`val`.toString()
+	  val topping = Topping(unvalidatedTopping)
+	  currentPizza = currentPizza.addTopping(topping) 
+  }
+  
+  @JSExport
+  def submitPizza(): Unit =  {  
+	  order =  Order(order.pizzas :+ currentPizza); 
+	  currentPizza = Pizza(List())
+	  jQuery("#price").html(order.price().toString())
+  }
+  
+  @JSExport
+  def submitOrder(): Unit = { 
+	  if (order.isValidOrder()){
+	 	  
+	 	   val jqxhr = jQuery.post("/orders", write(order),(data: Any) => {
+    		 	window.alert("Your order has been processed and will be there shortly!")
+    	 })
+    	   
+	  } else {
+	 	  window.alert("Minimum value not reached!")
+	  }
+  }
+  
+  def main(): Unit = {
+	  
+		jQuery.ajaxSetup(js.Dynamic.literal(
+			contentType = "application/json"
+		))
+  }
+	
 
 {% endhighlight %}
 
@@ -135,13 +174,15 @@ If you're a Scala developer and always wished you could extend your Backend know
 The sbt plugins work really well, and I hear integration into Angular and React work quite nicely and combined with the Play! framework it could be very very powerful.
 If you're interested, I've prepared a few links.
 
+You cnan find all the code showed here and lots more [in the github repo][git repo].
+
 The basics of Scala.js [http://www.scala-js.org/tutorial/basic/][scalajs basic]
 
 Using Scala.js with jQuery [https://github.com/scala-js/scala-js-jquery][scalajs jquery]
 
 Using sbt to cross compile Scala to the JVM and JS [http://lihaoyi.github.io/hands-on-scala-js/#IntegratingClient-Server][scalajs hands on]
 
-
+[git repo]: https://github.com/LukaJCB/FullStackScala
 [scalajs basic]: http://www.scala-js.org/tutorial/basic/
 [scalajs jquery]: https://github.com/scala-js/scala-js-jquery
 [scalajs hands on]: http://lihaoyi.github.io/hands-on-scala-js/#IntegratingClient-Server
