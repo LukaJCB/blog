@@ -10,7 +10,7 @@ title: The Science of Code
 email: lukajaco@yahoo.de
 description: > # this means to ignore newlines until "baseurl:"
   This is a space where I like to try out new things, be it technologies, languages, frameworks or a combination of those. If you by any chance like what you read, just follow me on GitHub.  
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "http://lukajcb.github.io/blog/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 twitter_username: BrokenIcarus
 github_username:  LukaJCB
