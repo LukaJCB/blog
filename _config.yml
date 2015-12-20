@@ -15,5 +15,8 @@ url: "http://lukajcb.github.io/blog" # the base hostname & protocol for your sit
 twitter_username: BrokenIcarus
 github_username:  LukaJCB
 
+paginate: 5
+comments: true
+
 # Build settings
 markdown: kramdown
