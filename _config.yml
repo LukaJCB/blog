@@ -16,7 +16,13 @@ twitter_username: BrokenIcarus
 github_username:  LukaJCB
 
 
-
+owner:
+  name:           Luka Jacobowitz
+  bio:            "This is a space where I like to try out new things, be it technologies, languages, frameworks or a combination of those. If you by any chance like what you read, just follow me on GitHub."
+  email:          lukajaco@yahoo.de
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        BrokenIcarus
+  github:         LukaJCB
 
 paginate: 5
 comments: true
