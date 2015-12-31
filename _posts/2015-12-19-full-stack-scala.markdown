@@ -3,6 +3,7 @@ layout: post
 title:  "Full Stack Scala"
 date:   2015-12-19 23:00:25 +0100
 categories: scala
+tags: scala scala.js 
 ---
 
 There's been a lot of talks recently about the "holy grail of web development" of sharing code between the Server and the Client.
@@ -65,7 +66,8 @@ case class Order(pizzas: List[Pizza]) {
 
 Now for writing the server-side code.
 If you're not familiar with Scalatra, it's a small Sinatra-like (obviously) framework, which allows you to quickly create RESTful services (similar to Express).
-Scala has built-in xml literals and we can take advantage of that and write pure HTML and map it to a GET-Request. 
+Scala has built-in xml literals and we can take advantage of that and write pure HTML and map it to a GET-Request.
+XML values are a type safe in the sense that an error in the XML Markup would cause a compile time error.
 Now in a real world application we'd use a templating language like Jade or [Scalate][scalate], but for this app we're just gonna use this shortcut.
 {% highlight scala %}
 package com.ltj.server
