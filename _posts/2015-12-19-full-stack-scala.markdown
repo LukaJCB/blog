@@ -3,7 +3,7 @@ layout: post
 title:  "Full Stack Scala"
 date:   2015-12-19 23:00:25 +0100
 categories: scala
-tags: scala scala.js scalatra sbt
+tags: Scala Scala.js Scalatra sbt µPickle
 ---
 
 There's been a lot of talks recently about the "holy grail of web development" of sharing code between the Server and the Client.
@@ -176,7 +176,7 @@ If you're a Scala developer and always wished you could extend your Backend know
 The sbt plugins work really well, and I hear integration into Angular and React work quite nicely and combined with the Play! framework it could be very very powerful.
 If you're interested, I've prepared a few links.
 
-You cnan find all the code showed here and lots more [in the github repo][git repo].
+You can find all the code showed here and lots more [in the github repo][git repo].
 
 The basics of Scala.js [http://www.scala-js.org/tutorial/basic/][scalajs basic]
 
