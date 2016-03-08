@@ -74,9 +74,7 @@ We already have a function that calculates the premium for a single credit card 
 case class CreditCard(creditInfo: CreditCardInfo, issuer: Person, account: Account)
 
 object CreditCard {
-    
     def getPremium(totalCards: Int, creditCard: CreditCard): Double = { ... }
-    
 }
 
 {% endhighlight %}
@@ -97,9 +95,13 @@ All we need to do is curry the `getPremium` function by changing it to use multi
 The result should look something like this:
 {% highlight scala %}
 
+object CreditCard {
+    def getPremium(totalCards: Int)(creditCard: CreditCard): Double = { ... }
+}
+
 val creditCards: List[CreditCard] = getCreditCards()
 
-val getPremiumWithTotal = Convertible.getCredit(creditCards.length)_
+val getPremiumWithTotal = CreditCard.getCredit(creditCards.length)_
 
 val allPremiums = creditCards.map(getPremiumWithTotal).sum
 
