@@ -55,8 +55,8 @@ We've defined a generic function that will turn any binary operator into a curri
 def add(a: Int, b: Int) = a + b // (Int, Int) => Int
 def multiply(a: Int, b: Int) = a * b // (Int, Int) => Int
       
-val addCurried = curryBinaryOperator[Int](add) // Int => (Int => Int
-val multiplyCurried = curryBinaryOperator[Int](multiply) // Int => (Int => Int
+val addCurried = curryBinaryOperator[Int](add) // Int => (Int => Int)
+val multiplyCurried = curryBinaryOperator[Int](multiply) // Int => (Int => Int)
 {% endhighlight %}
 
 Note here, that our addCurried function is the same as our add function above with the multiple parameter lists. 
