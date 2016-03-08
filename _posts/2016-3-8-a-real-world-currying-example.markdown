@@ -3,7 +3,7 @@ layout: post
 title:  "A real world Currying example"
 date:   2016-03-08 14:00:25 +0100
 categories: Scala
-tags: Scala Currying Partial Application 
+tags: Scala Currying Partial-Application 
 ---
 
 I recently came across a situtation where I tried to explain to a colleague the concept of `Currying`, `partial function application` and its benefits.
