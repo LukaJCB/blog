@@ -84,7 +84,7 @@ Something like this:
 {% highlight scala %}
 
 val creditCards: List[CreditCard] = getCreditCards()
-val allPremiums = creditCards.map(CreditCard.getPremium).sum
+val allPremiums = creditCards.map(CreditCard.getPremium).sum //type mismatch; found : (Int, CreditCard) ⇒ Double required: CreditCard ⇒ ?
 
 {% endhighlight %}
 
