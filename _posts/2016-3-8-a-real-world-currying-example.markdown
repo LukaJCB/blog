@@ -59,7 +59,7 @@ val addCurried = curryBinaryOperator[Int](add) // Int => (Int => Int)
 val multiplyCurried = curryBinaryOperator[Int](multiply) // Int => (Int => Int)
 {% endhighlight %}
 
-Note here, that our addCurried function is the same as our add function above with the multiple parameter lists. 
+Note here, that our `addCurried` function is the same as our add function above with the multiple parameter lists. 
 So `Scala` makes it very very easy to create curried functions. 
 Other functional programming languages like `Haskell` or `F#` also provide you with a very easy way to write curried functions.
 
