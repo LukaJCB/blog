@@ -101,7 +101,7 @@ object CreditCard {
 
 val creditCards: List[CreditCard] = getCreditCards()
 
-val getPremiumWithTotal = CreditCard.getCredit(creditCards.length)_
+val getPremiumWithTotal = CreditCard.getPremium(creditCards.length)_
 
 val allPremiums = creditCards.map(getPremiumWithTotal).sum
 
