@@ -9,11 +9,11 @@ tags: Scala null Option Maybe Java Swift F# Swift Ruby C# Groovy Kotlin
 Tony Hoare called them his [billion dollar mistake][tony], but we all know them, null references.
 
 We can probably all agree that we've all had our fair share of annoyances with these infamous little things,
-so today we're going to explore how different programming languages choose to handle (or not handle) null (or nil) values.
+so today we're going to explore how different programming languages choose to handle (or not handle) `null` (or `nil`) values.
 This has been a topic for some time now and I always wanted to have some kind of comparison between different solutions,
  with their respective advantages and disadvantages.
  
-First let's look at an example how NOT to handle null in Java 7. 
+First let's look at an example how NOT to handle `null` in Java 7. 
 You've probably seen something like this before and probably hoped never having to do it again.
 
 {% highlight java %}
