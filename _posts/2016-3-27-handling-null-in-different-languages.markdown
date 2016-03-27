@@ -66,7 +66,7 @@ It's impossible for you to "forget", because the type system enforces it.
 Java adopted this kind of system in Java 8, which includes other functional programming features. 
 We'll see why that's important later. First let's look at an example in F#.
 
-{% highlight f# %}
+{% highlight haskell %}
 personOption |> Option.bind (fun p -> p.residence)
   |> Option.bind (fun r -> r.address)
   |> Option.map (fun a -> a.constructionFirm)
@@ -128,7 +128,7 @@ So Swift invokes some syntactic sugar similar to Scala to improve readability.
 In the same sense you can write `Optional<String>` as `String?`. 
 
 Kotlin does this the same way:
-{% highlight kotlin %}
+{% highlight scala %}
 val firm: String? = personOption?.residence?.address?.constructionFirm
 {% endhighlight %} 
 
