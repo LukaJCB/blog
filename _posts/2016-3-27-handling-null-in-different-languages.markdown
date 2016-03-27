@@ -7,6 +7,7 @@ tags: Scala null Java Swift F# Swift Ruby C# Groovy Kotlin
 ---
 
 Tony Hoare called them his [billion dollar mistake][tony], but we all know them, null references.
+
 We can probably all agree that we've all had our fair share of annoyances with these infamous little things,
 so today we're going to explore how different programming languages choose to handle (or not handle) null (or nil) values.
 This has been a topic for some time now and I always wanted to have some kind of comparison between different solutions,
@@ -142,6 +143,7 @@ What do you guys think about this? What's your favorite solution? Let me know!
 
 
 References:
+
 [Groovy: http://www.groovy-lang.org/operators.html#_safe_navigation_operator](http://www.groovy-lang.org/operators.html#_safe_navigation_operator)
 [Kotlin: https://kotlinlang.org/docs/reference/null-safety.html](https://kotlinlang.org/docs/reference/null-safety.html)
 [Java 8: http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html](http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html)
