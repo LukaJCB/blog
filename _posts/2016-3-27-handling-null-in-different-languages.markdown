@@ -18,7 +18,7 @@ You've probably seen something like this before and probably hoped never having 
 
 {% highlight java %}
 
-//String constructionFirm = person.getResidence().getAddress().getConstructionFirm();
+String constructionFirm = person.getResidence().getAddress().getConstructionFirm();
 //Can't do this because residence, address or constructionFirm could be null.
 
 String constructionFirm = null;
@@ -39,7 +39,7 @@ With the Safe navigation operator we can chain the navigation without risking a 
 The above can be written in Groovy like this:
 
 {% highlight java %}
-String constructionFirm = person?.getResidence()?.getAddress()?.getConstructionFirm()
+def constructionFirm = person?.residence?.address?.constructionFirm
 {% endhighlight %}  
 
 Last year in 2015, Ruby and C# added this feature as well. 
