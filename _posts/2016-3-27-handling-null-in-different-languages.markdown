@@ -3,7 +3,7 @@ layout: post
 title:  "Handling null in different languages"
 date:   2016-03-08 14:00:25 +0100
 categories: Scala
-tags: Scala null Java Swift F# Swift Ruby C# Groovy Kotlin
+tags: Scala null Option Maybe Java Swift F# Swift Ruby C# Groovy Kotlin
 ---
 
 Tony Hoare called them his [billion dollar mistake][tony], but we all know them, null references.
