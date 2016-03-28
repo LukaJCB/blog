@@ -25,7 +25,10 @@ owner:
   github:         LukaJCB
 
 paginate: 5
-comments: true
+comments:
+   provider: disqus
+ disqus: 
+   short_name: codescience
 
 # Build settings
 markdown: kramdown
