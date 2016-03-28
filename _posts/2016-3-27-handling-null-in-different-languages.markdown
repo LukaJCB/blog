@@ -145,10 +145,15 @@ What do you guys think about this? What's your favorite solution? Let me know!
 References:
 
 [Groovy: http://www.groovy-lang.org/operators.html#_safe_navigation_operator](http://www.groovy-lang.org/operators.html#_safe_navigation_operator)
+
 [Kotlin: https://kotlinlang.org/docs/reference/null-safety.html](https://kotlinlang.org/docs/reference/null-safety.html)
+
 [Java 8: http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html](http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html)
+
 [Ruby 2.3: https://www.ruby-lang.org/en/news/2015/12/25/ruby-2-3-0-released/](https://www.ruby-lang.org/en/news/2015/12/25/ruby-2-3-0-released/)
+
 [Swift: https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html)
+
 [C# 6: https://msdn.microsoft.com/en-us/library/dn986595.aspx](https://msdn.microsoft.com/en-us/library/dn986595.aspx)
 
 [tony]: http://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare
