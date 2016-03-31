@@ -27,7 +27,7 @@ owner:
 paginate: 5
 comments: true
 
-disqus_shortname: codescience
+disqus_shortname: scienceofcode
 
 # Build settings
 markdown: kramdown
