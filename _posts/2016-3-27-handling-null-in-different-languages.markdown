@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Handling null in different languages"
-date:   2016-03-08 23:00:25 +0100
+date:   2016-03-27 23:00:25 +0100
 categories: Scala
 tags: Scala null Option Maybe Java Swift F# Ruby C# Groovy Kotlin
 ---
