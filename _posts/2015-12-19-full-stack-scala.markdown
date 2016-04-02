@@ -3,7 +3,7 @@ layout: post
 title:  "Full Stack Scala"
 date:   2015-12-19 23:00:25 +0100
 categories: scala
-tags: Scala Scala.js Scalatra sbt µPickle
+tags: Scala Scala.js Scalatra
 ---
 
 There's been a lot of talks recently about the "holy grail of web development" of sharing code between the Server and the Client.
