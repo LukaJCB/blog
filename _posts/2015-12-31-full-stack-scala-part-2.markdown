@@ -3,7 +3,7 @@ layout: post
 title:  "Full Stack Scala Part 2: Persistence with MongoDB"
 date:   2015-12-31 14:00:25 +0100
 categories: Scala
-tags: Scala Scala.js Scalatra Mongodb Casbah REST
+tags: Scala Scala.js Scalatra MongoDB
 ---
 
 In the [last post] we talked about setting up a tiny application that shares Scala code across the Server and Client.
