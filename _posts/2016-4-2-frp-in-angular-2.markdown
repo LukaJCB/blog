@@ -215,9 +215,10 @@ Our ability to click on our button won't end anytime soon, so we definitely need
 The function we pass into `scan` will make sure, that every new value will be concatenated to our accumulator.
 
 
-And with that we're done. 
+And with that we're done. You can see the full app running [here][live].
 We only used the forms API, but the HTTP Api also exposes Observables and can be used in almost the same way.
 This app is by no means production ready, but it's enough to give you an idea, of what you can do with Angular and FRP.
+
 
 
 ### Conclusion
@@ -252,7 +253,7 @@ You can find all of the code shown here in this [GitHub Repo][git repo].
 
 [Angular 2 Application Architecture - Building Redux-like apps using RxJs][angular2 redux]
 
-
+[live]: http://lukajcb.github.io/Angular2-FRP/
 [angular2 redux]: http://blog.jhades.org/angular-2-application-architecture-building-applications-using-rxjs-and-functional-reactive-programming-vs-redux/
 [frp for angular2]: http://blog.jhades.org/functional-reactive-programming-for-angular-2-developers-rxjs-and-observables/ 
 [redux]: https://github.com/reactjs/redux/blob/master/docs/introduction/PriorArt.md
