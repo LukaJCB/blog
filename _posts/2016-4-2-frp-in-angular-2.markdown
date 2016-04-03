@@ -177,7 +177,7 @@ export class PersonListComponent {
     
     addNewPerson: () => any;
     
-    constructor(fb: FormBuilder) {
+    constructor() {
        
         const peopleSignal = Observable.create(observer => {
             this.addNewPerson = () => observer.next();
@@ -213,6 +213,7 @@ The main difference between `scan` and `reduce` is that `scan` will emit an inte
 `reduce` on the other hand only emits a value once the sequence ends. 
 Our ability to click on our button won't end anytime soon, so we definitely need the `scan` operator for this.
 The function we pass into `scan` will make sure, that every new value will be concatenated to our accumulator.
+
 
 And with that we're done. 
 We only used the forms API, but the HTTP Api also exposes Observables and can be used in almost the same way.
