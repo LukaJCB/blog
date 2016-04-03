@@ -60,7 +60,7 @@ Now it's time to create our template:
 
 {% highlight html %}
 <div>
-    <h2>{% raw %} {{ person.name | async }}{% endraw %}</h2>
+    <h2>{% raw %}{{ person.name | async }}{% endraw %}</h2>
     <form [ngFormModel]="form">
         <label>Name:</label>
         <input type="text" ngControl="name"><br/>
@@ -72,8 +72,8 @@ Now it's time to create our template:
         <input type="number" ngControl="weight"><br/>
     </form>
     
-    <div><strong> Body Mass Index (BMI) = {% raw %} {{ person.bmi | async }}{% endraw %}</strong></div>
-    <div><strong> Category: {% raw %} {{ person.category | async }}{% endraw %} </strong></div>
+    <div><strong> Body Mass Index (BMI) = {% raw %}{{ person.bmi | async }}{% endraw %}</strong></div>
+    <div><strong> Category: {% raw %}{{ person.category | async }}{% endraw %} </strong></div>
 </div>
 {% endhighlight %}
 
