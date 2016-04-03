@@ -41,7 +41,8 @@ Again, I'm not going to go into more depth here, since it would be beyond the sc
  but if you want, you can check out this [this video][video] by Sergi Mansilla about FRP using RxJS (I can also really recommend his [book!][book]).
  
 
-
+Without further ado, let's start creating a small sample app, where we can calculate a BMI for a specific person.
+The first thing we're going to want to do is creating a model.
 
 {% highlight javascript %}
 
@@ -138,6 +139,7 @@ It's even more powerful when you use it for something like reacting to key press
 In our case we transform our values for the height and width into a BMI value, by calling the `toBmi` function (omitted here).
 
 `.filter(value => value > 0);`
+
 Lastly we got `filter` which is another very common operator. It tells our Observable to only emit values when they fulfil the given predicate.
 We use it here to filter out any values that are `0` or `NaN`.
 
@@ -146,7 +148,7 @@ We then use the bmi to create the `category` Observable which maps a specific bm
 Now when we run this with a `Person` instance we get a fully functioning application that calculates the BMI, written in pure FRP without any external mutable state.
 But wait a minute, this app hardly has any state at all. "This was way too easy. I want to see a real CRUD App". 
 
-Alright, alright, let's expand our example to create a list of the component we just created. 
+Alright, alright, let's expand our example to create a list of the component we just created (I know I suck at thinking of example apps, sue me!). 
 
 First, let's create a small template to display our list:
 
@@ -223,7 +225,7 @@ Using FRP we can coordinate between different components or server backends much
 In the end, avoiding side effects as much as you can, can really save you time in building a complex reactive program.
 
 Personally, I'm very content with the API the Angular developers have given us. It makes Angular 2 extremely flexible. 
-If this post has you intrigued, I suggest you check out [Cycle.js] and/or [Elm][elm]. 
+If this post has you intrigued, I suggest you check out [Cycle.js][cycle] and/or [Elm][elm]. 
 Both are frameworks that take this kind of approach and expand upon it (although Elm is technically a full language). 
 Unlike Angular and React these frameworks specifically want you to use this specific type of architecture. 
 It's highly interresting, how far you can take these approaches and I've enjoyed every minute of it. 
@@ -234,10 +236,12 @@ You can even find this quote in the [Redux docs][redux] :
 > The question is: do you really need Redux if you already use Rx? Maybe not. It’s not hard to re-implement Redux in Rx. 
 > Some say it’s a two-liner using Rx .scan() method. It may very well be!
 
-We've come a long way since Backbone, Knockout and the original AngularJS and the future looks even brighter! I hope you all enjoyed this piece and consider FRP in your future Angular 2 Project.
+We've come a long way since Backbone, Knockout and the original AngularJS and the future looks even brighter!
+I hope you all enjoyed this piece and consider FRP in your future Angular 2 Project.
+
 You can find all of the code shown here in this [GitHub Repo][git repo].
 
-##### Further reading: 
+#### Further reading: 
 [Managing state in angular 2][state]
 
 [FRP for Angular2 Developers - RxJs and Observables][frp for angular2]
