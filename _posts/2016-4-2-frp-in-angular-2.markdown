@@ -234,7 +234,8 @@ It's highly interresting, how far you can take these approaches and I've enjoyed
 
 If you're already using some form of Reactive Programming with Flux and Redux, you should consider giving RxJS a try. 
 I feel it's much easier, and you can use that gained knowledge in any other language that provides the Rx Api (which is basically every common language out there).
-You can even find this quote in the [Redux docs][redux] : 
+You can even find this quote in the [Redux docs][redux]: 
+
 > The question is: do you really need Redux if you already use Rx? Maybe not. It’s not hard to re-implement Redux in Rx. 
 > Some say it’s a two-liner using Rx .scan() method. It may very well be!
 
