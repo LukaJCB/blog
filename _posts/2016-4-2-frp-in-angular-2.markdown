@@ -24,7 +24,7 @@ If you already know Functional Programming, FRP is going to be much easier to gr
 The same as in Functional Programming, we want to avoid any kind of mutable state and program by composing pure functions.
 Pure functions are functions that do not have any side effects, meaning the function always results in the same return value, when given the same arguments.
 
-All of this will make our code much more concise, we no longer program by telling the computer what you want to have, instead of how to get it. 
+All of this will make our code much more concise, we can now program by telling the computer what you want to have, instead of how to get it. 
 In that sense FRP is declarative, rather than imperative. 
 We can now program at a higher abstraction level, similar to how coding in Angular 1.x featured a much higher abstraction level than coding with jQuery only.
 This reduces a lot of common errors and bugs, especially as your applications become more and more complex.
