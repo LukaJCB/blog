@@ -3,7 +3,7 @@ layout: post
 title:  "Functional Reactive Programming in Angular 2"
 date:   2016-04-02 16:00:25 +0100
 categories: Angular2
-tags: Angular2 FRP RxJS Observable Typescript
+tags: Angular2 FRP RxJS ReactiveX Typescript
 ---
 
 
