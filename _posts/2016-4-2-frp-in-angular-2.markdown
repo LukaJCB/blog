@@ -199,7 +199,7 @@ The `people` field is an Observable again, this time it's an array though. We'll
 Then we have the `addNewPerson` function, that get's called whenever we press our button.
 
 Now let's take a look at `peopleSignal`. What we see here is how we create an Observable using `Observable.create()`.
-By bibding our `addNewPerson` function to call `observer.next()` we ensure that, this Obvservable will emit a value everytime we click the button. 
+By binding our `addNewPerson` function to call `observer.next()` we ensure that, this Obvservable will emit a value everytime we click the button. 
 This is far from pretty, sadly, but it's currently the only way to create one from an event listener in Angular 2 (Let's hope future versions offer something better!).
 
 Then as a last step we transform our `peopleSignal` Observable into one that's actually going to get things done.
