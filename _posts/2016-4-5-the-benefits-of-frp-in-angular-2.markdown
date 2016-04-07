@@ -6,7 +6,7 @@ categories: Angular2
 tags: Angular2 FRP RxJS ReactiveX Typescript
 ---
 
-In my last post, I tried to show how to do Functional Reactive Programming in Angular 2. 
+In my [last post][lpost], I tried to show how to do Functional Reactive Programming in Angular 2. 
 Now I've heard from some people that it's too complicated and you shouldn't do ever really do it.
 I definitely understand that, switching programming paradigms is probably the most difficult change you can make, as it requires you to forget almost everything you already learned.
 
@@ -98,3 +98,4 @@ Hope you enjoyed reading this and would love to hear your thoughts!
 [cd video]: https://www.youtube.com/watch?v=jvKGQSFQf10
 [change detection]: http://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html
 [cd video react]: https://youtu.be/I7IdS-PbEgI?t=16m40s
+[lpost]:http://lukajcb.github.io/blog/angular2/2016/04/02/frp-in-angular-2.html
