@@ -23,6 +23,7 @@ If our component tree is very large, this can be very very expensive, because ch
 Starting to sound really ineffecient, right? 
 I did a quick diagram in draw.io to visualize what I'm saying:
 ![Tree]({{ site.url }}/assets/all-tree.png)
+
 When something changes (in red) all components have to be checked.
 
 One solution to this problem would be to make our data immutable, preferably with some framework like Immutable.js.
@@ -31,10 +32,11 @@ This is because the data can never be changed, so if we want to check for change
 So now instead of checking every single leaf of our tree, we just need to check the paths where our components aren't referentially equal.
 Here's another diagram, to show you what's changed:
 ![Tree with Immutable data]({{ site.url }}/assets/immutable-tree.png)
+
 This time we only have to check those that aren't referentially equal and don't have to check their children (in grey).
 
 Also, if you want even more insight check out this video from React Conf about Immutable.js.
-<iframe width="420" height="315" src="https://youtu.be/I7IdS-PbEgI?t=16m40s" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/I7IdS-PbEgI?t=16m40s" frameborder="0" allowfullscreen></iframe>
 
 Moving on to Observables we can get even better performance!
 This is because we can simply subscribe to our Observable to get notified when it emits an event immediatly.
@@ -54,7 +56,7 @@ So our new template now looks like this:
 {% highlight html %}
 
 <div>
-    <h2>{{ form.name }}</h2>
+    <h2>{% raw %}{{ form.name }}{% endraw %}</h2>
     <form>
         <label>Name:</label>
         <input type="text" [(ngModel)]="form.name"><br/>
@@ -66,8 +68,8 @@ So our new template now looks like this:
         <input type="number" [(ngModel)]="form.weight"><br/>
     </form>
     
-    <div><strong> Body Mass Index (BMI) = {{ getBmi() }}</strong></div>
-    <div><strong> Category: {{ getCategory() }} </strong></div>
+    <div><strong> Body Mass Index (BMI) = {% raw %}{{ getBmi() }}{% endraw %}</strong></div>
+    <div><strong> Category: {% raw %}{{ getCategory() }}{% endraw %}</strong></div>
 </div>
 
 {% endhighlight %}
@@ -76,9 +78,12 @@ I ran both versions with lots and lots of these components and profiled them wit
 These are the results:
 
 ![Using ngModel]({{ site.url }}/assets/ng2mutable.png)
+
 Here we're using `ngModel` and we can see it takes about 58ms for one change detection cycle. 
 The total aggregated time of change detection throughout the period of testing is 119.15 ms.
+
 ![Using Observables]({{ site.url }}/assets/ng2frp.png)
+
 Here we're using Observables and it's already much quicker. We get 20 ms for this one function and an aggregated result of 46.18 ms.
 That's about a 2.5-3x performance increase! Not bad if you ask me.
 
