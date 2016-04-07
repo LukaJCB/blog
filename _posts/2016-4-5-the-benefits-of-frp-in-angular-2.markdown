@@ -7,7 +7,7 @@ tags: Angular2 FRP RxJS ReactiveX Typescript
 ---
 
 In my last post, I tried to show how to do Functional Reactive Programming in Angular 2. 
-Now I've heard from some people that it's too complicated and you shouldn't do ever really do it.
+Now I've heard from some people that it's too complicated and you shouldn't ever really do it.
 I definitely understand that, switching programming paradigms is probably the most difficult change you can make, as it requires you to forget almost everything you already learned.
 
 While showing the benefits of another programming paradigm is quite difficult and always to some extent subjective, showing some real performance benefits is a lot more objective.
