@@ -171,7 +171,7 @@ So now that we have all this wired up we can start up the application.
 And see there, it works! 
 So there we have it. Sharing Scala code between client and the server. 
 In my opinion the name "holy grail" does do a lot of justice to this approach. 
-However Scala.js probably isn't exactly production ready, although bindings for React and Angular already exist today.
+However Scala.js hasn't reached 1.0 yet, although bindings for React and Angular already exist today.
 If you're a Scala developer and always wished you could extend your Backend knowledge to the client, you should give it a try. 
 The sbt plugins work really well, and I hear integration into Angular and React work quite nicely and combined with the Play! framework it could be very very powerful.
 If you're interested, I've prepared a few links.
