@@ -256,7 +256,7 @@ As usual, all code shown here, can also be found in [this GitHub repo][demo repo
 
 [ng2 frp]: http://lukajcb.github.io/blog/angular2/2016/04/02/frp-in-angular-2.html
 [rxapi]: http://reactivex.io/
-[swift frp]: https://realm.io/news/slug-max-alexander-functional-reactive-rxswift/
+[frp swift]: https://realm.io/news/slug-max-alexander-functional-reactive-rxswift/
 [evan frp]: https://www.youtube.com/watch?v=Agu6jipKfYw
 [rxswift repo]: https://github.com/ReactiveX/RxSwift
 [demo repo]: https://github.com/LukaJCB/RxCocoaDemo
