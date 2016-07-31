@@ -60,7 +60,7 @@ However Scala also has a special syntax using for-comprehensions, which are much
 Here's how that would look:
 
 
-{% gist ab52ea5cacdc353aceddde170042cc1a %}
+{% gist f0aeadefd123a914c76fa1df9a8ac56c %}
 
 This is a very good way to handle optional values and forching the user to handle null explicitly is a big step forward if you ask me.
 However one might argue that the Groovy, C# and Ruby solutions are much shorter and more concise.
