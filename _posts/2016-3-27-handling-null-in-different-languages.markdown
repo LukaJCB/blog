@@ -16,23 +16,7 @@ This has been a topic for some time now and I always wanted to have some kind of
 First let's look at an example how NOT to handle `null` in Java 7. 
 You've probably seen something like this before and probably hoped never having to do it again.
 
-{% highlight java %}
-
-String constructionFirm = person.getResidence().getAddress().getConstructionFirm();
-//Can't do this because residence, address or constructionFirm could be null.
-
-String constructionFirm = null;
-if(person != null){
-   Residence residence = person.getResidence();
-   if(residence != null){
-      Address address = residence.getAddress();
-      if(address != null){
-         constructionFirm = adress.getConstructionFirm();
-      }
-   }
-}
-
-{% endhighlight %}  
+{% gist 3c904567ee9b16d95caf5679bddcf2cf %}
 
 The first solution I want to look at is the "Safe navigation operator" `?.` in Groovy, which I believe was the first to implement it.
 With the Safe navigation operator we can chain the navigation without risking a NullPointerException. 
