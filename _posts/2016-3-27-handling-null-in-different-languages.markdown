@@ -22,19 +22,13 @@ The first solution I want to look at is the "Safe navigation operator" `?.` in G
 With the Safe navigation operator we can chain the navigation without risking a NullPointerException. 
 The above can be written in Groovy like this:
 
-{% highlight java %}
-def constructionFirm = person?.residence?.address?.constructionFirm
-{% endhighlight %}  
+{% gist 679c89a36b0ff6688cd8ef8f65de0273 %}
 
 Last year in 2015, Ruby and C# added this feature as well. 
 C# uses the same syntax as Groovy:
-{% highlight java %}
-String constructionFirm = person?.residence?.address?.constructionFirm;
-{% endhighlight %}  
+{% gist 03de289359bd9a636c84a5f44e1fde90 %}
 Ruby went with `&.` to avoid confusion, since Ruby allows questions marks in their method names to signal a returned boolean value:
-{% highlight ruby %}
-constructionFirm = person&.residence&.address&.constructionFirm
-{% endhighlight %}
+{% gist f6d9f523c34bd3da71266ec9a782e51e %}
 
 This is a great addition to the respective languages, however it does have one flaw. 
 These null-checks are never enforced, so you can forget about them quite easily and introduce subtle bugs into your code base.
@@ -51,42 +45,22 @@ It's impossible for you to "forget", because the type system enforces it.
 Java adopted this kind of system in Java 8, which includes other functional programming features. 
 We'll see why that's important later. First let's look at an example in F#.
 
-{% highlight haskell %}
-personOption |> Option.bind (fun p -> p.residence)
-  |> Option.bind (fun r -> r.address)
-  |> Option.map (fun a -> a.constructionFirm)
-{% endhighlight %}
+{% gist 6ec04932a20ef9cb191a00e5e5b310d2 %}
 
 And here's the same thing in Java 8:
-{% highlight java %}
-Optional<String> firm = personOption
-   .flatMap(Person::getResidence)
-   .flatMap(Residence::getAddress)
-   .map(Address::getConstructionFirm)
-{% endhighlight %}
+{% gist 07d5b46b642bca626595447cc1d4ca80 %}
 
 `map` is a higher order function that transforms the value inside the `Option` if it exists and does nothing if it's absent.
 `flatmap` does the same thing, however it flattens the result, so you don't get nested Options like this: `Optional<Optional<Optional<String>>>`
 The same thing can also be applied in Scala:
 
-{% highlight scala %}
-val firm = personOption
-   .flatMap(_.residence)
-   .flatMap(_.address)
-   .map(_.constructionFirm)
-{% endhighlight %}
+{% gist ab52ea5cacdc353aceddde170042cc1a %}
 
 However Scala also has a special syntax using for-comprehensions, which are much more readable if you ask me.
 Here's how that would look:
 
 
-{% highlight scala %}
-val firm = for {
-    person <- personOption
-    residence <- person.residence
-    address <- residence.address
-} yield address.constructionFirm
-{% endhighlight %}
+{% gist ab52ea5cacdc353aceddde170042cc1a %}
 
 This is a very good way to handle optional values and forching the user to handle null explicitly is a big step forward if you ask me.
 However one might argue that the Groovy, C# and Ruby solutions are much shorter and more concise.
@@ -94,28 +68,17 @@ That's why in the last few years languages have tried to combine the two concept
 We're going to have a look at how Swift and Kotlin thrive to combine the two, for maximum readability.
 
 First let's look at an example in Swift:
-{% highlight swift %}
-
-let firm: Optional<String> = personOption
-    .flatMap { $0.residence }
-    .flatMap { $0.address }
-    .map { $0.constructionFirm }
-
-{% endhighlight %}
+{% gist ab52ea5cacdc353aceddde170042cc1a %}
 
 So this is the exact same way Java, Scala and F# do it, but in Swift you can convert it to this:
 
-{% highlight swift %}
-let firm: String? = personOption?.residence?.address?.constructionFirm
-{% endhighlight %}
+{% gist 82effd50906ab03df1d0870940602755 %}
 
 So Swift invokes some syntactic sugar similar to Scala to improve readability. 
 In the same sense you can write `Optional<String>` as `String?`. 
 
 Kotlin does this the same way:
-{% highlight scala %}
-val firm: String? = personOption?.residence?.address?.constructionFirm
-{% endhighlight %} 
+{% gist 4e852aea3b263495f46e7aab583b6815 %}
 
 So in these examples `firm` would either be a valid string, or `null` in kotlin and `nil` in Swift.
 In both languages, if you don't explicitly make your variables optional by adding a `?` after its type, it has to be initialized.
