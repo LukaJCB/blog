@@ -10,6 +10,7 @@ What makes a language functional? Well, that's a good question!
 Some people say that lambdas make a language a functional language. 
 Others say it's the ability to bind functions to variables. But that in itself isn't really all it takes right?
 After all, we could do this with function pointers in C! And I don't think many would claim C is a functional language, right?
+
 In this article I'll try to go over some specific features that I personally think make or break a functional programming language.
 Now pay in mind, that a lot of this is going to be fairly subjective, but I'd love to hear your thoughts in the comments!
 
@@ -22,7 +23,6 @@ So without further ado here's what we will take a look at throughout this articl
 * Currying
 * Lazy Evaluation
 * Algebraic Data Types
-
 * Other topics (Higher Kinded Types, Existential Types)
 
 
@@ -33,6 +33,7 @@ Having functions be first class basically only really means that you can use the
  like being able to bind functions to variables and pass them around your application.
 
 Now there have been a lot of different names for what is basically just a couple of concepts, so we'll try and go through them shortly.
+
 ### Anonymous Functions AKA Lambda Expressions
 Lambdas and anonymous functions are essentially the same thing, it's just a function that doesn't have a binding to an identifier.
 So they're just easy ways for creating functions, in the same sense that some languages allow literals for Arrays or dictionaries.
@@ -123,6 +124,7 @@ That is because when programming in a functional way,
 In order for this to be efficient, most functional languages offer an optimization technique called "Tail Call Optimization".
 With this technique it's possible for recursive functions to not increase the size of the call stack.
 In other words: the compiler more or less replaces the original function with the equivalent of an imperative loop.
+
 Going into too much detail here would break the scope of the article, so here's the gist of it:
  if the last thing you do (i.e. the "tail" position) in a function is a recursive call to itself,
  the compiler can optimize this to act like iteration instead of recursion.
@@ -147,6 +149,7 @@ Typically the former looks something like `list.sort()` while expressions look l
 To put it simply, in Expression-Oriented programming languages everything is an expression!
 Which means that everything has a return value.
 This is something we aspire to because statements always have side effects and should be avoided as much as possible in functional programming.
+
 Rust, Ruby, Kotlin and more functional languages like Scala, Elm, Haskell or F# all use this paradigm.
 This means that for example the `if`-construct always returns a result:
 
