@@ -1,12 +1,10 @@
 ---
 layout: post
 title:  "What makes a programming language functional"
-date:   2016-07-29 15:31:25 +0100
+date:   2016-07-29 15:41:25 +0100
 categories: Functional
-tags: Scala F# Haskell Elm JavaScript Java C# Ruby Python Rust Swift Kotlin C C++
+tags: Scala F# Haskell Elm JavaScript Java C# Ruby Python Rust Swift Kotlin
 ---
-
-
 
 What makes a language functional? Well, that's a good question!
 Some people say that lambdas make a language a functional language. 
@@ -17,15 +15,15 @@ Now pay in mind, that a lot of this is going to be fairly subjective, but I'd lo
 
 So without further ado here's what we will take a look at throughout this article (in order of most to last important to functional programming):
 
-* First class functions  (HOFs, Lexical Closures)
-* Immutability (immutable collections)
-* Recursion (TCO)
-* expression-oriented ((Rust, Kotlin, Scala, Elm, Haskell, F#, Ruby))
-* currying
-* lazy evaluation (elm doesn’t because FRP is hard with it)
-* ADTs (pattern matching)
+* First Class Functions 
+* Immutability
+* Recursion
+* Expression-Oriented Programming
+* Currying
+* Lazy Evaluation
+* Algebraic Data Types
 
-* Other topics (Higher Kinded Types, Existential Types, Typeclasses)
+* Other topics (Higher Kinded Types, Existential Types)
 
 
 ## First class functions
@@ -113,7 +111,7 @@ The coolest collections come from the late Scala community leader Phil Bagwell (
  essentially they offer amortized O(1) lookiups, insertions and deletions on Vectors and HashMaps.
 You can find these data structures in Clojures and Scalas standard library as well as in libraries such as Immutable.js. 
 There's a lot of super interesting stuff to talk about,
- so if you're interested check out [this great series][persistent-cols] on how these data structures actually work.
+ so if you're interested check out [this great series][persistent cols] on how these data structures actually work.
 
 ## Recursion
 Most if not all of modern programming languages support the notion of recursion
@@ -255,5 +253,5 @@ Yes we can do functional programming in almost any language,
 Once you try out a language that has a lot of these "functional" features, you'll probably find programming with pure functions a lot more pleasant.
 And I hope you guys can also enjoy functional programming more once you've got a hold on some of these cool features. 
 
-[persistent-cols]: http://hypirion.com/musings/understanding-persistent-vector-pt-1
+[persistent cols]: http://hypirion.com/musings/understanding-persistent-vector-pt-1
 [currying]: http://lukajcb.github.io/blog/scala/2016/03/08/a-real-world-currying-example.html
