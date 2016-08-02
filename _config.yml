@@ -31,3 +31,4 @@ disqus_shortname: scienceofcode
 
 # Build settings
 markdown: kramdown
+gems: [jekyll-gist]

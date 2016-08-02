@@ -3,7 +3,7 @@ layout: post
 title:  "What makes a programming language functional"
 date:   2016-07-31 18:31:25 +0100
 categories: Functional
-tags: Scala F# Haskell Elm JavaScript C# Rust Swift Kotlin
+tags: Scala F# Haskell Elm JavaScript C# Rust Swift Kotlin Ruby Python Java C#
 ---
 
 What makes a language functional? Well, that's a good question!
@@ -185,7 +185,7 @@ What we'd like to do is use higher-order functions like `map` and `filter` inste
 This can be solved quite handily using lazy evaluation.
 
 So now let's have a look at equivalent code using lazy evaluation:
-{% gist de1db796f69c53accffecc1dec8e2a5d &}
+{% gist de1db796f69c53accffecc1dec8e2a5d %}
 Wait a minute... it's the same basic code! 
 Well yeah it is, the truly interesting stuff is happening behind the scenes, but this code can demonstrate a few things. 
 
