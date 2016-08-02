@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "What makes a programming language functional"
-date:   2016-07-29 15:41:25 +0100
+date:   2016-07-31 18:31:25 +0100
 categories: Functional
-tags: Scala F# Haskell Elm JavaScript Java C# Ruby Python Rust Swift Kotlin
+tags: Scala F# Haskell Elm JavaScript C# Rust Swift Kotlin
 ---
 
 What makes a language functional? Well, that's a good question!
