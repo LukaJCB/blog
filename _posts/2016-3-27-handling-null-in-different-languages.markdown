@@ -68,7 +68,7 @@ That's why in the last few years languages have tried to combine the two concept
 We're going to have a look at how Swift and Kotlin thrive to combine the two, for maximum readability.
 
 First let's look at an example in Swift:
-{% gist ab52ea5cacdc353aceddde170042cc1a %}
+{% gist 2401adcf6b048e80ae851bfdb2d06eb3 %}
 
 So this is the exact same way Java, Scala and F# do it, but in Swift you can convert it to this:
 
