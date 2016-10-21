@@ -38,7 +38,7 @@ Alright, now let's get codin'! The first thing we're gonna do is create the sour
 The function will accept a `Switch` and return an `Observable<bool>`.
 Creating new Observables is fairly straight forward. Let's look at a small example:
 
-{% highlight f# %}
+{% highlight ocaml %}
 Observable.Create(fun (o: IObserver<int>) ->
         o.OnNext(1)
         o.OnNext(2)
@@ -52,7 +52,7 @@ We use the `Observable.Create` function and call the `OnNext`, `OnError` and `On
 
 Now that we know how to create Observables, let's finally create one for the Switch:
 
-{% highlight f# %}
+{% highlight ocaml %}
 module RxForms =
     let fromSwitch (s: Switch) = Observable.Create(fun (o: IObserver<bool>) ->
         s.Toggled.Subscribe(fun t -> o.OnNext(t.Value)))
@@ -66,7 +66,7 @@ Yay! We created our first source binding! We placed in a module called `RxForms`
 Okay, so let's continue by defining a sink. 
 We'll call our function `bindLabel` and it'll take an `Observable<string>` and a  `Label` and it'll return a `Subscription`.
 
-{% highlight f# %}
+{% highlight ocaml %}
 let bindEntry (l: Label) (o: IObservable<string>) =
     o |> Observable.subscribe(fun s -> l.Text <- s)
         
@@ -75,7 +75,7 @@ let bindEntry (l: Label) (o: IObservable<string>) =
 Now that we've created functions to extract sources and bind to sinks, we have a basis on which we could expand and wrap around all of the Xamarin.Forms widgets.
 So go! No time to lose, the Api has dozens of Views to wrap, but first let's see if our cute little program actually works.
 Here's the code:
-{% highlight f# %}
+{% highlight ocaml %}
 type App() =
     inherit Application()
     
@@ -107,7 +107,7 @@ whenever the bound view get's destroyed (This is what RxCocoa's `DisposeBag` doe
 I could probably end this article here, but let's look at a few more examples.
 First, some easy stuff:
 
-{% highlight f# %}
+{% highlight ocaml %}
 let fromButton (b: Button) = Observable.Create(fun (o: IObserver<unit>) -> 
     b.Clicked.Subscribe(fun _ -> o.OnNext( () )))
    
@@ -125,13 +125,13 @@ The Todo app is great though, because it usually demonstrates how to handle stat
 One option for implementing such an app would be to add both a Button and an Entry and combine them,
  but Entry also offers a Event that emits once the user ends input.
 Let's add a function to extract such a source:
-{% highlight f# %}
+{% highlight ocaml %}
 let fromEntryCompleted (e: Entry) = Observable.Create(fun (o: IObserver<_>) -> 
     e.Completed.Subscribe(fun s -> o.OnNext(e.Text)))
 {% endhighlight %}
 
 We'll start by adding both an `Entry` and a `ListView` and extracting an `Observable<string>` from the `Entry`:
-{% highlight f# %}
+{% highlight ocaml %}
 type App() =
     inherit Application()
 
@@ -156,7 +156,7 @@ Once again, I made a diagram to explain this (a picture speak a thousand words).
 So every time our `Entry` completes, we add a new item to our list.
 This is how that looks in code:
 
-{% highlight f# %}
+{% highlight ocaml %}
 let todoLists = 
     Observable.scan (fun acc cur -> acc |> List.append [cur]) [] submittedTodos
 
