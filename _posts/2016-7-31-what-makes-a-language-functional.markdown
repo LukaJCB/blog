@@ -109,7 +109,7 @@ So there's no need to defensively copy the whole structure, saving both memory a
 This is called data sharing and is a huge benefit of immutable data structures.
 
 The coolest collections come from the late Scala community leader Phil Bagwell (R.I.P.),
- essentially they offer amortized O(1) lookiups, insertions and deletions on Vectors and HashMaps.
+ essentially they offer amortized O(1) lookups, insertions and deletions on Vectors and HashMaps.
 You can find these data structures in Clojures and Scalas standard library as well as in libraries such as Immutable.js. 
 There's a lot of super interesting stuff to talk about,
  so if you're interested check out [this great series][persistent cols] on how these data structures actually work.
