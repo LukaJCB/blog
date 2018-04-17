@@ -185,7 +185,7 @@ If `throwError` and `catchError` were instead separated into separate type class
 This also allows us to define laws that our counterparts of functions like `try` and `ensure` are consistent with the ones defined on `MonadError`.
 So the type signature now looks like this:
 ```haskell
-class (MonadError f e, Monad g) => MonadBlunder f g e | f -> e, f -> g, g -> f where
+class (MonadError f e, Monad g) => MonadBlunder f g e | f -> e, f -> g where
   ...
 ```
 
@@ -193,7 +193,7 @@ Now since this means that any instance of `MonadBlunder` will also have an insta
 Here's a complete definition of what we've come up with with `throwError` removed and `catchError` renamed to `catchBlunder`:
 
 ```haskell
-class (MonadError f e, Monad g) => MonadBlunder f g e | f -> e, f -> g, g -> f where
+class (MonadError f e, Monad g) => MonadBlunder f g e | f -> e, f -> g where
   catchBlunder :: forall a. f a -> (e -> g a) -> g a
 ```
 
