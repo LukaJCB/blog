@@ -373,4 +373,6 @@ We also tried to build a solution that deals with the shortcomings described ear
 Thereby it seeks not to replace, but to expand on `MonadError` to get a great variety of error handling capabilities.
 I believe the `MonadBlunder` type class, or whatever it will be renamed to, has the potential to be a great addition to the functional community at large.
 
+You can find the full code [here](https://pursuit.purescript.org/packages/purescript-errorcontrol/0.2.1/docs/Error.Control).
+
 Note again, that none of this is final or set in stone and before it arrives anywhere might still change a lot, especially in regards to naming (which I'm not really happy with at the moment), so if you have any feedback of any sorts, please do chime in! Would love to hear your thoughts and thank you for reading this far!
